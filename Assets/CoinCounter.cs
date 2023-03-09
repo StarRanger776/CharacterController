@@ -25,6 +25,7 @@ public class CoinCounter : MonoBehaviour
         if(count >= winCount && lose.activeInHierarchy == false)
         {
             win.SetActive(true);
+            Debug.Log("You Won");
         }
     }
 }

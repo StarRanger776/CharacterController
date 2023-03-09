@@ -25,6 +25,7 @@ public class Health : MonoBehaviour
         if (health <= 0 && win.activeInHierarchy == false)
         {
             lose.SetActive(true);
+            Debug.Log("You Lost");
         }
     }
 }
