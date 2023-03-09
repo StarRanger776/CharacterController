@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class CoinCounter : MonoBehaviour
+public class Health : MonoBehaviour
 {
-    public TMPro.TMP_Text text;
-    public int count;
-
-    public int winCount = 10;
+    public int health = 100;
 
     public GameObject win;
     public GameObject lose;
+    public TMPro.TMP_Text text;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,11 +20,11 @@ public class CoinCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        text.text = "Coins: " + count.ToString();
+        text.text = "Health: " + health.ToString();
 
-        if(count >= winCount && lose.activeInHierarchy == false)
+        if (health <= 0 && win.activeInHierarchy == false)
         {
-            win.SetActive(true);
+            lose.SetActive(true);
         }
     }
 }
